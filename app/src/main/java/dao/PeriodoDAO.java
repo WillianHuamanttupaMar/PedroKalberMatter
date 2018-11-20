@@ -6,18 +6,15 @@ import android.database.sqlite.SQLiteDatabase;
 
 import OpenHelper.DBCon;
 
-public class UsuarioDAO extends DBCon{
-
+public class PeriodoDAO extends DBCon{
     DBCon con;
     Context context;
     SQLiteDatabase db;
     Cursor cur;
     String sql;
 
-    public UsuarioDAO(Context context) {
+    public PeriodoDAO(Context context) {
         super(context);
         this.context=context;
     }
 }
-
-
