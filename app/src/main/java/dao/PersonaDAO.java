@@ -25,7 +25,7 @@ public class PersonaDAO extends DBCon {
 
     public List listarPersona(){
         con=new DBCon(context);
-        //db=con.getReadableDatabase();
+        db=con.getReadableDatabase();
         sql="select * from persona";
         cur=db.rawQuery(sql,null);
         ArrayList<PersonaTO> lista=new ArrayList<>();

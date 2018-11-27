@@ -26,7 +26,22 @@ public class ReporteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reporte2, container, false);
+        //return inflater.inflate(R.layout.fragment_reporte2, container, false);
+        View myFragmenView=inflater.inflate(R.layout.fragment_reporte2, container, false);
+        dao=new PersonaDAO(this.getContext());
+        List<PersonaTO> persona=dao.listarPersona();
+
+        this.recyclerView=(RecyclerView)myFragmenView.findViewById(R.id.recyclerView);
+
+
+        this.layoutManager=new LinearLayoutManager(this.getContext());
+
+        this.adapter=new PersonaAdapter(persona);
+        this.recyclerView.setLayoutManager(layoutManager);
+
+        this.recyclerView.setAdapter(adapter);
+        return myFragmenView;
+
 
     }
 }
